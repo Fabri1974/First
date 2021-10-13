@@ -1,0 +1,41 @@
+https://www.youtube.com/watch?v=EL9Ngxt_m7k 2
+https://www.youtube.com/watch?v=RTIJKcv-PR0 1
+Capicua
+  public static boolean esCapicua(int numero) {       
+        int faltante=numero;
+        int numeroInvertido=0;
+        int restante=0;
+        
+        while(faltante!=0) {
+            restante=faltante%10;
+            numeroInvertido=numeroInvertido*10+restante;
+            faltante=faltante/10;       
+        }
+        
+        if(numeroInvertido==numero){                
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+
+DROP DATABASE IF EXISTS usuario;
+CREATE DATABASE usuario CHARACTER SET utf8mb4;
+USE usuario;
+
+CREATE TABLE usuario.Usuario (
+	clave INT NOT NULL,
+	nombre VARCHAR(45) NOT NULL,
+	correoElectronico VARCHAR(45) NOT NULL,
+	edad INT NOT NULL,
+	PRIMARY KEY (clave));
+
+INSERT INTO usuario.Usuario (clave, nombre, correoElectronico,edad) VALUES ('123', 'Martin', 'martinprofe@gmail.com', '23');
+INSERT INTO usuario.Usuario (clave, nombre, correoElectronico,edad) VALUES ('456', 'Lucas', 'lucas@hotmail.com','21');
+INSERT INTO usuario.Usuario (clave, nombre, correoElectronico,edad) VALUES ('345', 'Carola', 'caro@yahoo.com','18');
+INSERT INTO usuario.Usuario (clave, nombre, correoElectronico,edad) VALUES ('789', 'Teresa', 'tere@gmail.com','16');
+INSERT INTO usuario.Usuario (clave, nombre, correoElectronico,edad) VALUES ('678', 'Rafael','rafita@gmail.com','21');
+INSERT INTO usuario.Usuario (clave, nombre, correoElectronico,edad) VALUES ('312', 'Valentino','valen@gmail.com','15');
+
+SELECT * FROM usuario;
